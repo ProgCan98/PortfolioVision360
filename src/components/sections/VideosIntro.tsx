@@ -132,7 +132,7 @@ export function VideosIntro() {
               <VideoCard
                 video={{ src: telefonoVideoSrc, title: "Video de trabajos" }}
                 className="absolute inset-0 h-full w-full"
-                autoSound
+                
               />
               
             </div>
