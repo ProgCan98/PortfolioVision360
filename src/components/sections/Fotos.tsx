@@ -54,7 +54,12 @@ export function Fotos() {
     const el = photoRefs.current[index];
     if (el) {
       const r = el.getBoundingClientRect();
-      setStartRect({ top: r.top, left: r.left, width: r.width, height: r.height });
+      setStartRect({
+        top: r.top,
+        left: r.left,
+        width: r.width,
+        height: r.height,
+      });
     }
     setSelected(index);
     // two-frame delay so the browser paints the start rect before transitioning to center
@@ -85,7 +90,10 @@ export function Fotos() {
   const renderPhoto = (foto: (typeof fotos)[number], globalIndex: number) => {
     // subtle staggered entrance: alternating photos slide in from the left/right page edges, resolving early
     const base = Math.min(Math.max(progress / 0.22, 0), 1);
-    const staggered = Math.min(Math.max(base - (globalIndex % 10) * 0.012, 0), 1);
+    const staggered = Math.min(
+      Math.max(base - (globalIndex % 10) * 0.012, 0),
+      1,
+    );
     const eased = 1 - (1 - staggered) ** 3;
     const fromLeft = globalIndex % 2 === 0;
     const x = (1 - eased) * (fromLeft ? -70 : 70);
@@ -120,10 +128,17 @@ export function Fotos() {
   };
 
   return (
-    <section ref={sectionRef} id="fotos" className="pt-8 pb-20 sm:pt-10 sm:pb-28 lg:pt-12 lg:pb-32 px-4">
+    <section
+      ref={sectionRef}
+      id="fotos"
+      className="pt-8 pb-20 sm:pt-10 sm:pb-28 lg:pt-12 lg:pb-32 px-4"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
-          <h2 className={`${titleClass} shrink-0 text-left lg:sticky lg:top-32`} style={titleStyle}>
+          <h2
+            className={`${titleClass} shrink-0 text-left lg:sticky lg:top-32`}
+            style={titleStyle}
+          >
             FOTOS
           </h2>
 
@@ -149,10 +164,11 @@ export function Fotos() {
             ×
           </button>
           <div
-            className="fixed overflow-hidden rounded-xl bg-[#1e1e1e] shadow-[0_30px_80px_rgba(0,0,0,0.6)] transition-all duration-[400ms] ease-out"
+            className="fixed flex items-center justify-center rounded-xl transition-all duration-[400ms]"
             style={
               expanded
                 ? {
+                    inset: 0,
                     top: "50%",
                     left: "50%",
                     width: `min(90vw, ${Math.round(startRect.width * 2.2)}px)`,
@@ -172,9 +188,9 @@ export function Fotos() {
             <Image
               src={fotos[selected].src}
               alt={fotos[selected].alt}
-              fill
-              className="object-contain"
-              sizes="90vw"
+              width={1600}
+              height={1600}
+              className="max-w-[90vw] max-h-[90vh] w-auto h-auto rounded-xl"
             />
           </div>
         </div>
@@ -182,5 +198,3 @@ export function Fotos() {
     </section>
   );
 }
-
-
