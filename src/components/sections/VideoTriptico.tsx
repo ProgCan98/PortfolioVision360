@@ -9,7 +9,7 @@ interface VideoTripticoProps {
 
 export function VideoTriptico({ group }: VideoTripticoProps) {
   return (
-    <section className="relative border-t border-white/5 py-8 sm:py-10">
+    <section className="relative py-8 sm:py-10">
       {/* Client name header */}
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 sm:px-6">
         <div className="flex items-center gap-3">
@@ -36,7 +36,7 @@ export function VideoTriptico({ group }: VideoTripticoProps) {
         {group.videos.slice(0, 3).map((video, index) => (
           <div
             key={`${group.cliente}-${index}`}
-            className="relative aspect-[9/16] min-h-[28rem] overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
+            className="relative aspect-[11/16] min-h-[28rem] overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
           >
             <VideoCard
               video={video}
