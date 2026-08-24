@@ -46,9 +46,9 @@ export function Placas() {
   );
 
   return (
-    <section className="py-20 sm:py-28 lg:py-32 px-4">
+    <section id="diseños" className="py-12 sm:py-16 lg:py-20 px-4">
       <div className="max-w-7xl mx-auto">
-        <SectionTitle className="mb-10">PLACAS</SectionTitle>
+        <SectionTitle className="mb-4">DISEÑOS</SectionTitle>
 
         <div className="relative flex items-center justify-center">
           <button
@@ -71,7 +71,7 @@ export function Placas() {
               return (
                 <div
                   key={i}
-                  className="absolute left-1/2 top-1/2 aspect-[4/5] w-36 overflow-hidden rounded-xl bg-[#1e1e1e] shadow-[0_20px_40px_rgba(0,0,0,0.5)] transition-all duration-700 ease-out sm:w-48 lg:w-60"
+                  className="absolute left-1/2 top-[40%] aspect-[4/5] w-36 overflow-hidden rounded-xl bg-[#1e1e1e] shadow-[0_20px_40px_rgba(0,0,0,0.5)] transition-all duration-700 ease-out sm:w-48 lg:w-60"
                   style={{
                     transform: `translate(-50%, -50%) translateX(calc(var(--pitch) * ${offset})) scale(${scale})`,
                     opacity,

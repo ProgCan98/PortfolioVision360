@@ -2,13 +2,15 @@
 import { useEffect, useState } from "react";
 
 const SECTION_IDS = [
-  "inicio",
-  "quienes-somos",
-  "servicios",
-  "clientes",
-  "trabajos",
-  "videos",
-  "contacto",
+    "inicio",
+    "quienes-somos",
+    "servicios",
+    "clientes",
+    "trabajos",
+    "diseños",
+    "fotos",
+    "videos",
+    "contacto",
 ];
 
 export function useActiveSection() {

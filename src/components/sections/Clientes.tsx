@@ -46,7 +46,10 @@ export function Clientes() {
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
           {clientes.map((cliente, index) => {
-            const cardProgress = Math.min(Math.max((progress - index * 0.04) / 0.48, 0), 1);
+            const cardProgress = Math.min(
+              Math.max((progress - index * 0.04) / 0.48, 0),
+              1,
+            );
             const eased = 1 - (1 - cardProgress) ** 2;
             const x = (1 - eased) * 180;
             const scale = 0.88 + eased * 0.12;
@@ -70,7 +73,12 @@ export function Clientes() {
                   width={160}
                   height={160}
                   className="relative z-10 object-contain transition-transform duration-300 group-hover:scale-105"
-                  style={{ width: "auto", height: "auto", maxWidth: "110px", maxHeight: "110px" }}
+                  style={{
+                    width: "auto",
+                    height: "auto",
+                    maxWidth: "180px",
+                    maxHeight: "180px",
+                  }}
                 />
               </div>
             );

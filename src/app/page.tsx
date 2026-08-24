@@ -5,7 +5,7 @@ import { QuienesSomos } from "@/components/sections/QuienesSomos";
 import { Servicios } from "@/components/sections/Servicios";
 import { Clientes } from "@/components/sections/Clientes";
 import { TrabajosIntro } from "@/components/sections/TrabajosIntro";
-import { Placas } from "@/components/sections/Placas";
+import { Placas } from "@/components/sections/Diseños";
 import { Fotos } from "@/components/sections/Fotos";
 import { VideosIntro } from "@/components/sections/VideosIntro";
 import { VideoTriptico } from "@/components/sections/VideoTriptico";

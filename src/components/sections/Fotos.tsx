@@ -120,7 +120,7 @@ export function Fotos() {
   };
 
   return (
-    <section ref={sectionRef} className="pt-8 pb-20 sm:pt-10 sm:pb-28 lg:pt-12 lg:pb-32 px-4">
+    <section ref={sectionRef} id="fotos" className="pt-8 pb-20 sm:pt-10 sm:pb-28 lg:pt-12 lg:pb-32 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
           <h2 className={`${titleClass} shrink-0 text-left lg:sticky lg:top-32`} style={titleStyle}>

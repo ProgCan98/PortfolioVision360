@@ -40,34 +40,36 @@ export function QuienesSomos() {
 
   // Left card: 270° counterclockwise orbit — front→right→behind→left (final)
   // Offset is relative to the card's natural grid position (θ_final = 3π/2)
-  const thetaL = t * (3 * Math.PI / 2);
-  const leftOffsetX = R_x * (Math.sin(thetaL) + 1);  // 260→520→260→0
-  const leftOffsetZ = R_z * Math.cos(thetaL);         // 300→0→-300→0
+  const thetaL = t * ((3 * Math.PI) / 2);
+  const leftOffsetX = R_x * (Math.sin(thetaL) + 1); // 260→520→260→0
+  const leftOffsetZ = R_z * Math.cos(thetaL); // 300→0→-300→0
   const leftZIndex = leftOffsetZ < -30 ? 2 : 8;
 
   // Right card: 270° clockwise orbit — front→left→behind→right (final)
   // Offset is relative to the card's natural grid position (θ_final = π/2)
-  const thetaR = -t * (3 * Math.PI / 2);
+  const thetaR = -t * ((3 * Math.PI) / 2);
   const rightOffsetX = R_x * (Math.sin(thetaR) - 1); // -260→-520→-260→0
-  const rightOffsetZ = R_z * Math.cos(thetaR);        // 300→0→-300→0
+  const rightOffsetZ = R_z * Math.cos(thetaR); // 300→0→-300→0
   const rightZIndex = t < 0.9 ? 9 : 4;
 
   // Quick fade-in at entry, then fully opaque
   const cardOpacity = Math.min(raw * 4, 1);
 
-  const settled = raw >= 0.60;
+  const settled = progress >= 0.4;
   const leftTransform = settled
-    ? "translate3d(0px, 0, 0)"
-    : `translate3d(${leftOffsetX}px, 0, ${leftOffsetZ}px)`;
+    ? "translate3d(0px,0,0)"
+    : `translate3d(${leftOffsetX}px,0,${leftOffsetZ}px)`;
+
   const rightTransform = settled
-    ? "translate3d(0px, 0, 0)"
-    : `translate3d(${rightOffsetX}px, 0, ${rightOffsetZ}px)`;
+    ? "translate3d(0px,0,0)"
+    : `translate3d(${rightOffsetX}px,0,${rightOffsetZ}px)`;
+  ``;
 
   return (
     <section
       ref={sectionRef}
       id="quienes-somos"
-      className="relative h-[110svh] min-h-[110svh] px-4 flex items-center"
+      className="scroll-mt-32 relative min-h-screen px-4 flex items-center"
     >
       <GlowBackground variant="section" />
 
@@ -93,7 +95,8 @@ export function QuienesSomos() {
               zIndex: leftZIndex,
               opacity: cardOpacity,
               transform: leftTransform,
-              boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03), 0 18px 40px rgba(0,0,0,0.2)",
+              boxShadow:
+                "inset 0 0 0 1px rgba(255,255,255,0.03), 0 18px 40px rgba(0,0,0,0.2)",
               willChange: "transform",
               transition: "transform 0.2s ease-out, opacity 0.2s ease-out",
             }}
@@ -105,7 +108,10 @@ export function QuienesSomos() {
           </div>
 
           {/* Circle — fixed, upright, subtle scale-in on enter */}
-          <div className="flex items-center justify-center" style={{ position: "relative", zIndex: 5 }}>
+          <div
+            className="flex items-center justify-center"
+            style={{ position: "relative", zIndex: 5 }}
+          >
             <div
               className="relative flex items-center justify-center"
               style={{
@@ -133,7 +139,8 @@ export function QuienesSomos() {
               zIndex: rightZIndex,
               opacity: cardOpacity,
               transform: rightTransform,
-              boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03), 0 18px 40px rgba(0,0,0,0.2)",
+              boxShadow:
+                "inset 0 0 0 1px rgba(255,255,255,0.03), 0 18px 40px rgba(0,0,0,0.2)",
               willChange: "transform",
               transition: "transform 0.2s ease-out, opacity 0.2s ease-out",
             }}

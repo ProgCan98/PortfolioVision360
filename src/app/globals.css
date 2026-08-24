@@ -39,6 +39,10 @@ section {
   scroll-margin-top: 6rem;
 }
 
+section[id] {
+  scroll-margin-top: 0px;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }

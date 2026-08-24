@@ -18,7 +18,7 @@ export const clientes: ClienteData[] = [
   {
     id: "nodo",
     nombre: "Nodo Tecnológico",
-    logo: "/logos/logo-nodo.png",
+    logo: "/logos/logo-nodo-nuevo.png",
     alt: "Logo Nodo Tecnológico",
   },
   {
@@ -67,7 +67,7 @@ const videoUrl = (filename: string) => {
 
 export const videoGroups: VideoGroup[] = [
   {
-    cliente: "Mil Artículos",
+    cliente: "1000 Artículos",
     videos: [
       { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236830/mil-articulos-1.mov"), title: "Mil Artículos — Video 1" },
       { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236810/mil-articulos-2.mov"), title: "Mil Artículos — Video 2" },

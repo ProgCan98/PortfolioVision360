@@ -13,5 +13,7 @@ export const NAV_ITEMS = [
   { label: "Servicios", href: "#servicios" },
   { label: "Clientes", href: "#clientes" },
   { label: "Trabajos", href: "#trabajos" },
+  { label: "Diseños", href: "#diseños" },
+  { label: "Fotos", href: "#fotos" },
   { label: "Videos", href: "#videos" },
 ];
