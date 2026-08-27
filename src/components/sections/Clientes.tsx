@@ -35,7 +35,7 @@ export function Clientes() {
     <section
       ref={sectionRef}
       id="clientes"
-      className="relative py-20 sm:py-28 lg:py-32 px-4"
+      className="relative py-20 sm:py-28 lg:py-32 px-4 overflow-hidden"
     >
       <GlowBackground variant="section" />
 

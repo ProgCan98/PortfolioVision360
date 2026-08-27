@@ -41,7 +41,7 @@ export function VideosIntro() {
     <section
       ref={sectionRef}
       id="videos"
-      className="relative py-20 sm:py-28 lg:py-32 px-4"
+      className="relative py-20 sm:py-28 lg:py-32 px-4 overflow-hidden"
     >
       <GlowBackground variant="hero" />
 

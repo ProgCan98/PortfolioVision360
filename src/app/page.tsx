@@ -1,4 +1,5 @@
 ﻿import { Header } from "@/components/layout/Header";
+import { EmbersBackground } from "@/components/ui/EmbersBackground";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { QuienesSomos } from "@/components/sections/QuienesSomos";
@@ -15,8 +16,9 @@ import { videoGroups } from "@/content/portfolio-data";
 export default function Home() {
   return (
     <>
+      <EmbersBackground />
       <Header />
-      <main>
+      <main className="relative z-10">
         <HeroSection />
         <QuienesSomos />
         <Servicios />

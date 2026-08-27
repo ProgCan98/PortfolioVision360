@@ -9,7 +9,7 @@ interface VideoTripticoProps {
 
 export function VideoTriptico({ group }: VideoTripticoProps) {
   return (
-    <section className="relative py-8 sm:py-10">
+    <section className="relative py-8 sm:py-10 overflow-hidden">
       {/* Client name header */}
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 sm:px-6">
         <div className="flex items-center gap-3">

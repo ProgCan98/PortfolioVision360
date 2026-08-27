@@ -7,7 +7,7 @@ export function Cierre() {
   return (
     <section
       id="contacto"
-      className="relative flex items-center justify-center min-h-screen px-4"
+      className="relative flex items-center justify-center min-h-screen px-4 overflow-hidden"
     >
       <GlowBackground variant="hero" />
 

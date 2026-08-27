@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { GlowBackground } from "@/components/ui/GlowBackground";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { EmbersBackground } from "../ui/EmbersBackground";
 
 export function QuienesSomos() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -69,11 +70,13 @@ export function QuienesSomos() {
     <section
       ref={sectionRef}
       id="quienes-somos"
-      className="scroll-mt-32 relative min-h-screen px-4 flex items-center"
+      className="scroll-mt-32 relative min-h-screen px-4 flex items-center overflow-hidden"
     >
       <GlowBackground variant="section" />
 
-      <div className="max-w-6xl mx-auto w-full">
+    
+
+      <div className="relative z-20 max-w-6xl mx-auto w-full">
         <SectionTitle
           className={`mb-39 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"

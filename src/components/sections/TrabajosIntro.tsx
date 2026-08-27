@@ -48,7 +48,7 @@ export function TrabajosIntro() {
     <section
       ref={sectionRef}
       id="trabajos"
-      className="relative overflow-hidden px-4 py-20 sm:py-28 lg:py-32"
+      className="relative overflow-hidden px-4 py-20 sm:py-28 lg:py-32 overflow-hidden"
     >
       <div
         className="pointer-events-none absolute inset-0"

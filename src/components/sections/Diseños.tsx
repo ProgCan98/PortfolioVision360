@@ -46,7 +46,7 @@ export function Placas() {
   );
 
   return (
-    <section id="diseños" className="py-12 sm:py-16 lg:py-20 px-4">
+    <section id="diseños" className="py-12 sm:py-16 lg:py-20 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <SectionTitle className="mb-4">DISEÑOS</SectionTitle>
 

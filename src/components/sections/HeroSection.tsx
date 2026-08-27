@@ -1,13 +1,18 @@
 import Image from "next/image";
+2
 import { GlowBackground } from "@/components/ui/GlowBackground";
+3
+import { EmbersBackground } from "@/components/ui/EmbersBackground";
 
 export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative flex items-center justify-center min-h-screen"
+      className="relative flex items-center justify-center min-h-screen overflow-hidden"
     >
       <GlowBackground variant="hero" />
+
+      
 
       <div className="relative z-10 px-4 pt-3 sm:pt-24">
         <h1

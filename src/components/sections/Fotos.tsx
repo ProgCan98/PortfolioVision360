@@ -131,7 +131,7 @@ export function Fotos() {
     <section
       ref={sectionRef}
       id="fotos"
-      className="pt-8 pb-20 sm:pt-10 sm:pb-28 lg:pt-12 lg:pb-32 px-4"
+      className="pt-8 pb-20 sm:pt-10 sm:pb-28 lg:pt-12 lg:pb-32 px-4 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
@@ -158,7 +158,7 @@ export function Fotos() {
             type="button"
             onClick={closePhoto}
             aria-label="Cerrar"
-            className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#1d1d1d]/80 text-2xl text-white/80 transition-opacity duration-300 hover:border-brand-orange hover:text-brand-orange sm:right-8 sm:top-8"
+            className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#1d1d1d]/80 text-2xl text-white/80 transition-opacity duration-300 hover:border-brand-orange hover:text-brand-orange sm:right-8 sm:top-20"
             style={{ opacity: expanded ? 1 : 0 }}
           >
             ×
