@@ -278,3 +278,13 @@ section[id] {
     opacity: 1;
   }
 }
+
+
+@media (max-width: 768px) {
+
+  .hero-title-animated,
+  .section-title-animated {
+    animation: none !important;
+  }
+
+}

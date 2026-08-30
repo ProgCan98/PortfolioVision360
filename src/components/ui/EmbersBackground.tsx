@@ -1,18 +1,28 @@
 "use client";
 
-const particleCount = 8;
-
-const particles = Array.from({ length: particleCount }, (_, i) => ({
-  id: i,
-  neon: Math.random() < 0.30, // 30%
-  left: 10 + (i * 80) / particleCount,
-  size: 40 + Math.random() * 10,
-  delay: Math.random() * 4,
-  duration: 7 + Math.random() * 10,
-  rotation: Math.random() * 360,
-}));
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export function EmbersBackground() {
+  const isMobile = useIsMobile();
+
+  const particleCount = isMobile ? 4 : 8;
+
+  const particles = Array.from(
+    { length: particleCount },
+    (_, i) => ({
+      id: i,
+      neon: Math.random() < 0.25,
+      left: 10 + (i * 80) / particleCount,
+      size: isMobile
+        ? 22 + Math.random() * 6
+        : 40 + Math.random() * 10,
+      delay: Math.random() * 4,
+      duration: isMobile
+        ? 15 + Math.random() * 8
+        : 7 + Math.random() * 10,
+    })
+  );
+
   return (
     <div className="embers-container">
       {particles.map((p) => (
