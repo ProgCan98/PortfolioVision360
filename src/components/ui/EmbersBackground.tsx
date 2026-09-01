@@ -5,7 +5,7 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 export function EmbersBackground() {
   const isMobile = useIsMobile();
 
-  const particleCount = isMobile ? 2 : 8;
+  const particleCount = isMobile ? 3 : 8;
 
   const particles = Array.from({ length: particleCount }, (_, i) => ({
     id: i,
