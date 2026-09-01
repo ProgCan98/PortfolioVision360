@@ -16,7 +16,7 @@ import { videoGroups } from "@/content/portfolio-data";
 export default function Home() {
   return (
     <>
-      <EmbersBackground />
+      {/*<EmbersBackground />*/}
       <Header />
       <main className="relative z-10">
         <HeroSection />
