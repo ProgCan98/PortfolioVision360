@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { GlowBackground } from "@/components/ui/GlowBackground";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { servicios } from "@/content/portfolio-data";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export function Servicios() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -41,11 +42,19 @@ export function Servicios() {
       <div className="relative mx-auto max-w-7xl">
         <SectionTitle className="text-center">SERVICIOS</SectionTitle>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3" style={{ perspective: "1400px" }}>
+        <div
+          className="grid grid-cols-1 gap-6 md:grid-cols-3"
+          style={{ perspective: "1400px" }}
+        >
           {servicios.map((s, index) => {
-            const cardProgress = Math.min(Math.max((progress - index * 0.04) / 0.48, 0), 1);
+            const cardProgress = Math.min(
+              Math.max((progress - index * 0.04) / 0.48, 0),
+              1,
+            );
             const eased = 1 - (1 - cardProgress) ** 2;
-            const x = (1 - eased) * 180;
+            const isMobile = useIsMobile();
+            const x = isMobile ? 0 : (1 - eased) * 180;
+            const y = isMobile ? (1 - eased) * 50 : 0;
             const scale = 0.88 + eased * 0.12;
             const opacity = 0.15 + eased * 0.85;
 
@@ -56,7 +65,7 @@ export function Servicios() {
                 style={{
                   transformStyle: "preserve-3d",
                   opacity,
-                  transform: `translate3d(${x}px, 0, 0) scale(${scale})`,
+                  transform: `translate3d(${x}px, ${y}px) scale(${scale})`,
                   transition: "transform 0.5s ease-out, opacity 0.5s ease-out",
                 }}
               >

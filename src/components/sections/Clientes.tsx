@@ -5,6 +5,7 @@ import Image from "next/image";
 import { GlowBackground } from "@/components/ui/GlowBackground";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { clientes } from "@/content/portfolio-data";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export function Clientes() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -51,7 +52,9 @@ export function Clientes() {
               1,
             );
             const eased = 1 - (1 - cardProgress) ** 2;
-            const x = (1 - eased) * 180;
+            const isMobile = useIsMobile();
+            const x = isMobile ? 0 : (1 - eased) * 180;
+            const y = isMobile ? (1 - eased) * 50 : 0;
             const scale = 0.88 + eased * 0.12;
             const opacity = 0.15 + eased * 0.85;
 
@@ -61,7 +64,7 @@ export function Clientes() {
                 className="group relative flex aspect-square items-center justify-center rounded-[2rem] border border-white/5 bg-[#1d1d1d]/95 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.03),0_20px_30px_rgba(0,0,0,0.35)] transition-all duration-300 ease-out hover:-translate-y-5 hover:scale-[1.04] hover:shadow-[0_32px_72px_rgba(255,102,0,0.24),0_22px_44px_rgba(0,0,0,0.5)] sm:p-8"
                 style={{
                   opacity,
-                  transform: `translate3d(${-x}px, 0, 0) scale(${scale})`,
+                  transform: `translateY(${y}px) scale(${scale})`,
                   transition: "transform 0.5s ease-out, opacity 0.5s ease-out",
                 }}
               >

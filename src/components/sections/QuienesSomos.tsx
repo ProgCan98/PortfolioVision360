@@ -55,20 +55,21 @@ export function QuienesSomos() {
 
   // Quick fade-in at entry, then fully opaque
   const cardOpacity = Math.min(raw * 4, 1);
-  const isMobile = useIsMobile();
 
   const settled = progress >= 0.4;
+  const isMobile = useIsMobile();
   const leftTransform = isMobile
-    ? "none"
+    ? `translateY(${(1 - t) * 60}px)`
     : settled
       ? "translate3d(0px,0,0)"
       : `translate3d(${leftOffsetX}px,0,${leftOffsetZ}px)`;
 
   const rightTransform = isMobile
-    ? "none"
+    ? `translateY(${(1 - t) * -60}px)`
     : settled
       ? "translate3d(0px,0,0)"
       : `translate3d(${rightOffsetX}px,0,${rightOffsetZ}px)`;
+  ``;
 
   return (
     <section

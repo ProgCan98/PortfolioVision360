@@ -288,3 +288,16 @@ section[id] {
   }
 
 }
+
+@media (max-width: 768px) {
+
+  .neon-x::before,
+  .neon-x::after {
+
+    box-shadow:
+      0 0 8px rgba(255,106,0,.5),
+      0 0 12px rgba(255,106,0,.3);
+
+  }
+
+}
