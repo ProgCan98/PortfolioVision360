@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { GlowBackground } from "@/components/ui/GlowBackground";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { EmbersBackground } from "../ui/EmbersBackground";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export function QuienesSomos() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -55,16 +55,20 @@ export function QuienesSomos() {
 
   // Quick fade-in at entry, then fully opaque
   const cardOpacity = Math.min(raw * 4, 1);
+  const isMobile = useIsMobile();
 
   const settled = progress >= 0.4;
-  const leftTransform = settled
-    ? "translate3d(0px,0,0)"
-    : `translate3d(${leftOffsetX}px,0,${leftOffsetZ}px)`;
+  const leftTransform = isMobile
+    ? "none"
+    : settled
+      ? "translate3d(0px,0,0)"
+      : `translate3d(${leftOffsetX}px,0,${leftOffsetZ}px)`;
 
-  const rightTransform = settled
-    ? "translate3d(0px,0,0)"
-    : `translate3d(${rightOffsetX}px,0,${rightOffsetZ}px)`;
-  ``;
+  const rightTransform = isMobile
+    ? "none"
+    : settled
+      ? "translate3d(0px,0,0)"
+      : `translate3d(${rightOffsetX}px,0,${rightOffsetZ}px)`;
 
   return (
     <section
@@ -73,8 +77,6 @@ export function QuienesSomos() {
       className="scroll-mt-32 relative min-h-screen px-4 flex items-center overflow-hidden"
     >
       <GlowBackground variant="section" />
-
-    
 
       <div className="relative z-20 max-w-6xl mx-auto w-full">
         <SectionTitle
