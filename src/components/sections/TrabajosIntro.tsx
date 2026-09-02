@@ -53,6 +53,9 @@ export function TrabajosIntro() {
         { emoji: "👍", left: "-8.2rem", top: "63%", offset: 0.21, dx: 195 },
         { emoji: "❤️", left: "-7.1rem", top: "78%", offset: 0.28, dx: 182 },
       ];
+  const displayedEmojis = isMobile
+    ? floatingEmojis.slice(0, 2)
+    : floatingEmojis;
 
   return (
     <section
@@ -166,7 +169,7 @@ export function TrabajosIntro() {
               className="pointer-events-none absolute inset-y-0 left-0 z-[1]"
               aria-hidden
             >
-              {floatingEmojis.map((item) => {
+              {displayedEmojis.map((item) => {
                 const eRaw = Math.min(
                   Math.max(
                     (emojiReveal - item.offset) / (0.82 - item.offset),
