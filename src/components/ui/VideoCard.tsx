@@ -48,7 +48,7 @@ export function VideoCard({ video, className = "", autoSound = false }: VideoCar
 				muted
 				loop
 				playsInline
-				preload="auto"
+				preload="metadata"
 				onLoadedData={playVideo}
 				className="h-full w-full object-cover"
 			>
