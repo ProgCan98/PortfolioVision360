@@ -57,7 +57,6 @@ export function Servicios() {
             const y = isMobile ? (1 - eased) * 40 : 0;
             const scale = 0.88 + eased * 0.12;
             const opacity = 0.15 + eased * 0.85;
-            const highlight = isMobile ? cardProgress > 0.35 : false;
 
             return (
               <div
@@ -76,17 +75,8 @@ export function Servicios() {
                   transition-all
                   duration-500
                   ease-out
-                
-                  ${
-                    highlight
-                      ? "border-brand-orange/25 shadow-[0_20px_50px_rgba(255,102,0,0.20)]"
-                      : "border-white/5"
-                  }
-                
                   bg-[#1d1d1d]/95
-                
                   shadow-[inset_0_1px_0_rgba(255,255,255,0.03),0_20px_30px_rgba(0,0,0,0.35)]
-                
                   hover:-translate-y-5
                   hover:scale-[1.04]
                   hover:shadow-[0_32px_72px_rgba(255,102,0,0.24),0_22px_44px_rgba(0,0,0,0.5)]

@@ -37,7 +37,7 @@ export function TrabajosIntro() {
   const emojiReveal = Math.min(Math.max((progress - 0.06) / 0.65, 0), 1);
   // staggered offsets; dx = px to push back so start position aligns with logo center
   const floatingEmojis = [
-    { emoji: "😍", left: "-6.8rem", top: "10%", offset: 0,    dx: 175 },
+    { emoji: "😍", left: "-6.8rem", top: "10%", offset: 0, dx: 175 },
     { emoji: "💬", left: "-8.8rem", top: "28%", offset: 0.07, dx: 205 },
     { emoji: "🎉", left: "-6.5rem", top: "46%", offset: 0.14, dx: 170 },
     { emoji: "👍", left: "-8.2rem", top: "63%", offset: 0.21, dx: 195 },
@@ -63,7 +63,10 @@ export function TrabajosIntro() {
         <div className="order-2 flex justify-center lg:order-1 lg:justify-end">
           <div
             className="relative w-44 sm:w-52 lg:w-60"
-            style={{ transform: `scale(${phoneScale})`, transition: "transform 0.35s ease-out" }}
+            style={{
+              transform: `scale(${phoneScale})`,
+              transition: "transform 0.35s ease-out",
+            }}
           >
             <div
               className="absolute -inset-8 rounded-full"
@@ -83,7 +86,10 @@ export function TrabajosIntro() {
                     "radial-gradient(circle at 50% 68%, rgba(24,90,210,0.09) 0%, rgba(14,14,18,0.99) 35%, rgba(10,10,10,1) 100%)",
                 }}
               />
-              <div className="absolute inset-x-3 top-3 h-4 rounded-full bg-black/90" aria-hidden />
+              <div
+                className="absolute inset-x-3 top-3 h-4 rounded-full bg-black/90"
+                aria-hidden
+              />
               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-5 px-4 pt-6">
                 <div
                   className="flex flex-col items-center gap-5"
@@ -98,7 +104,8 @@ export function TrabajosIntro() {
                   <div
                     className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-white/15 shadow-[0_18px_32px_rgba(0,0,0,0.5)] lg:h-[4.4rem] lg:w-[4.4rem]"
                     style={{
-                      background: "linear-gradient(135deg,#ff5b7d 0%, #f1344f 35%, #ff7a2a 100%)",
+                      background:
+                        "linear-gradient(135deg,#ff5b7d 0%, #f1344f 35%, #ff7a2a 100%)",
                       boxShadow:
                         "inset 0 1px 0 rgba(255,255,255,0.18), 0 0 20px rgba(255,122,92,0.42), 0 0 34px rgba(255,120,60,0.2), 0 12px 20px rgba(0,0,0,0.4)",
                     }}
@@ -122,7 +129,8 @@ export function TrabajosIntro() {
                   <div
                     className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 shadow-[0_18px_32px_rgba(0,0,0,0.5)] lg:h-[4.4rem] lg:w-[4.4rem]"
                     style={{
-                      background: "linear-gradient(180deg,#3b97ff 0%, #1c62d8 100%)",
+                      background:
+                        "linear-gradient(180deg,#3b97ff 0%, #1c62d8 100%)",
                       boxShadow:
                         "inset 0 1px 0 rgba(255,255,255,0.22), 0 0 20px rgba(72,145,255,0.55), 0 0 40px rgba(24,100,220,0.28), 0 12px 20px rgba(0,0,0,0.4)",
                     }}
@@ -144,9 +152,18 @@ export function TrabajosIntro() {
             </div>
 
             {/* emoji layer outside overflow-hidden so they can escape the phone bounds */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-[1]" aria-hidden>
+            <div
+              className="pointer-events-none absolute inset-y-0 left-0 z-[1]"
+              aria-hidden
+            >
               {floatingEmojis.map((item) => {
-                const eRaw = Math.min(Math.max((emojiReveal - item.offset) / (0.82 - item.offset), 0), 1);
+                const eRaw = Math.min(
+                  Math.max(
+                    (emojiReveal - item.offset) / (0.82 - item.offset),
+                    0,
+                  ),
+                  1,
+                );
                 const eased = 1 - (1 - eRaw) ** 3;
                 // quadratic so emojis are tiny+invisible as they cross the phone edge, then burst
                 const scaleEase = eased * eased;
@@ -161,7 +178,8 @@ export function TrabajosIntro() {
                       opacity: scaleEase * 0.95,
                       transform: `translate3d(${(1 - eased) * item.dx}px, 0, 0) scale(${0.15 + scaleEase * 1.35}) perspective(500px) rotateY(${(1 - eased) * 35}deg)`,
                       textShadow: "0 6px 18px rgba(0,0,0,0.55)",
-                      transition: "transform 0.15s ease-out, opacity 0.15s ease-out",
+                      transition:
+                        "transform 0.15s ease-out, opacity 0.15s ease-out",
                     }}
                   >
                     {item.emoji}
@@ -182,7 +200,7 @@ export function TrabajosIntro() {
           <h2
             className="font-bebas leading-none tracking-[0.04em] text-transparent bg-clip-text section-title-animated"
             style={{
-              fontSize: "clamp(8.5rem, 8vw, 12rem)",
+              fontSize: "clamp(5.5rem, 14vw, 12rem)",
               backgroundImage:
                 "linear-gradient(95deg, #ff6a00 0%, #ff8a1f 28%, #ffb455 50%, #ff8a1f 72%, #ff6a00 100%)",
               backgroundSize: "220% 100%",
