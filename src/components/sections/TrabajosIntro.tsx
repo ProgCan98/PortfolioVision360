@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export function TrabajosIntro() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [progress, setProgress] = useState(0);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const node = sectionRef.current;
@@ -29,20 +31,28 @@ export function TrabajosIntro() {
 
   const t = Math.min(Math.max((progress - 0.02) / 0.75, 0), 1);
   const ease = 1 - (1 - t) ** 2;
-  const titleX = (1 - ease) * 180;
+  const titleX = isMobile ? (1 - ease) * 40 : (1 - ease) * 180;
   const titleOpacity = 0.15 + ease * 0.85;
   const phoneScale = 0.88 + ease * 0.12;
   const logosScale = 0.55 + ease * 0.7;
   const logosOpacity = 0.1 + ease * 0.9;
   const emojiReveal = Math.min(Math.max((progress - 0.06) / 0.65, 0), 1);
   // staggered offsets; dx = px to push back so start position aligns with logo center
-  const floatingEmojis = [
-    { emoji: "😍", left: "-6.8rem", top: "10%", offset: 0, dx: 175 },
-    { emoji: "💬", left: "-8.8rem", top: "28%", offset: 0.07, dx: 205 },
-    { emoji: "🎉", left: "-6.5rem", top: "46%", offset: 0.14, dx: 170 },
-    { emoji: "👍", left: "-8.2rem", top: "63%", offset: 0.21, dx: 195 },
-    { emoji: "❤️", left: "-7.1rem", top: "78%", offset: 0.28, dx: 182 },
-  ];
+  const floatingEmojis = isMobile
+    ? [
+        { emoji: "😍", left: "-2rem", top: "10%", offset: 0, dx: 80 },
+        { emoji: "💬", left: "-2.5rem", top: "28%", offset: 0.07, dx: 95 },
+        { emoji: "🎉", left: "-2rem", top: "46%", offset: 0.14, dx: 75 },
+        { emoji: "👍", left: "-2.5rem", top: "63%", offset: 0.21, dx: 90 },
+        { emoji: "❤️", left: "-2rem", top: "78%", offset: 0.28, dx: 85 },
+      ]
+    : [
+        { emoji: "😍", left: "-6.8rem", top: "10%", offset: 0, dx: 175 },
+        { emoji: "💬", left: "-8.8rem", top: "28%", offset: 0.07, dx: 205 },
+        { emoji: "🎉", left: "-6.5rem", top: "46%", offset: 0.14, dx: 170 },
+        { emoji: "👍", left: "-8.2rem", top: "63%", offset: 0.21, dx: 195 },
+        { emoji: "❤️", left: "-7.1rem", top: "78%", offset: 0.28, dx: 182 },
+      ];
 
   return (
     <section
@@ -94,7 +104,9 @@ export function TrabajosIntro() {
                 <div
                   className="flex flex-col items-center gap-5"
                   style={{
-                    transform: `translate3d(${(1 - ease) * -36}px, ${(1 - ease) * 24}px, 0) scale(${logosScale + 0.35}) rotate(${(1 - ease) * 8}deg)`,
+                    transform: isMobile
+                      ? `translateY(${(1 - ease) * 20}px) scale(${logosScale + 0.25})`
+                      : `translate3d(${(1 - ease) * -36}px, ${(1 - ease) * 24}px, 0) scale(${logosScale + 0.35}) rotate(${(1 - ease) * 8}deg)`,
                     opacity: logosOpacity,
                     transition: "all 0.42s cubic-bezier(0.16, 1, 0.3, 1)",
                     transformOrigin: "center center",
@@ -174,7 +186,7 @@ export function TrabajosIntro() {
                     style={{
                       left: item.left,
                       top: item.top,
-                      fontSize: "2.4rem",
+                      fontSize: isMobile ? "1.5rem" : "2.4rem",
                       opacity: scaleEase * 0.95,
                       transform: `translate3d(${(1 - eased) * item.dx}px, 0, 0) scale(${0.15 + scaleEase * 1.35}) perspective(500px) rotateY(${(1 - eased) * 35}deg)`,
                       textShadow: "0 6px 18px rgba(0,0,0,0.55)",

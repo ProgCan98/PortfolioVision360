@@ -54,7 +54,7 @@ export function Servicios() {
             );
             const eased = 1 - (1 - cardProgress) ** 2;
             const x = isMobile ? 0 : (1 - eased) * 180;
-            const y = isMobile ? (1 - eased) * 40 : 0;
+            const y = isMobile ? (1 - eased) * 15 : 0;
             const scale = 0.88 + eased * 0.12;
             const opacity = 0.15 + eased * 0.85;
 
