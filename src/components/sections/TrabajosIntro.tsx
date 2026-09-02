@@ -31,7 +31,7 @@ export function TrabajosIntro() {
 
   const t = Math.min(Math.max((progress - 0.02) / 0.75, 0), 1);
   const ease = 1 - (1 - t) ** 2;
-  const titleX = isMobile ? (1 - ease) * 40 : (1 - ease) * 180;
+  const titleX = isMobile ? (1 - ease) * 40 : (1 - ease) * 180; 
   const titleOpacity = 0.15 + ease * 0.85;
   const phoneScale = 0.88 + ease * 0.12;
   const logosScale = 0.55 + ease * 0.7;
@@ -104,9 +104,7 @@ export function TrabajosIntro() {
                 <div
                   className="flex flex-col items-center gap-5"
                   style={{
-                    transform: isMobile
-                      ? `translateY(${(1 - ease) * 20}px) scale(${logosScale + 0.25})`
-                      : `translate3d(${(1 - ease) * -36}px, ${(1 - ease) * 24}px, 0) scale(${logosScale + 0.35}) rotate(${(1 - ease) * 8}deg)`,
+                    transform: `translate3d(${(1 - ease) * -36}px, ${(1 - ease) * 24}px, 0) scale(${logosScale + 0.35}) rotate(${(1 - ease) * 8}deg)`,
                     opacity: logosOpacity,
                     transition: "all 0.42s cubic-bezier(0.16, 1, 0.3, 1)",
                     transformOrigin: "center center",
