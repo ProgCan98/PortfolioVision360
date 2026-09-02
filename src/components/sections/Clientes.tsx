@@ -80,7 +80,7 @@ export function Clientes() {
                     width: "auto",
                     height: "auto",
                     maxWidth: "180px",
-                    maxHeight: "180px",
+                    maxHeight: "158px",
                   }}
                 />
               </div>

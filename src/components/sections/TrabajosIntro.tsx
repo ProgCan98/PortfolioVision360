@@ -31,7 +31,7 @@ export function TrabajosIntro() {
 
   const t = Math.min(Math.max((progress - 0.02) / 0.75, 0), 1);
   const ease = 1 - (1 - t) ** 2;
-  const titleX = isMobile ? (1 - ease) * 40 : (1 - ease) * 180; 
+  const titleX = isMobile ? (1 - ease) * 40 : (1 - ease) * 180;
   const titleOpacity = 0.15 + ease * 0.85;
   const phoneScale = 0.88 + ease * 0.12;
   const logosScale = 0.55 + ease * 0.7;
@@ -40,11 +40,11 @@ export function TrabajosIntro() {
   // staggered offsets; dx = px to push back so start position aligns with logo center
   const floatingEmojis = isMobile
     ? [
-        { emoji: "😍", left: "-2rem", top: "10%", offset: 0, dx: 80 },
-        { emoji: "💬", left: "-2.5rem", top: "28%", offset: 0.07, dx: 95 },
-        { emoji: "🎉", left: "-2rem", top: "46%", offset: 0.14, dx: 75 },
-        { emoji: "👍", left: "-2.5rem", top: "63%", offset: 0.21, dx: 90 },
-        { emoji: "❤️", left: "-2rem", top: "78%", offset: 0.28, dx: 85 },
+        { emoji: "😍", left: "-3rem", top: "10%", offset: 0, dx: 80 },
+        { emoji: "💬", left: "-3.5rem", top: "28%", offset: 0.07, dx: 95 },
+        { emoji: "🎉", left: "-3rem", top: "46%", offset: 0.14, dx: 75 },
+        { emoji: "👍", left: "-3.5rem", top: "63%", offset: 0.21, dx: 90 },
+        { emoji: "❤️", left: "-3rem", top: "78%", offset: 0.28, dx: 85 },
       ]
     : [
         { emoji: "😍", left: "-6.8rem", top: "10%", offset: 0, dx: 175 },
@@ -69,7 +69,7 @@ export function TrabajosIntro() {
         }}
       />
 
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-6 lg:grid-cols-2 lg:gap-16">
         <div className="order-2 flex justify-center lg:order-1 lg:justify-end">
           <div
             className="relative w-44 sm:w-52 lg:w-60"
@@ -210,7 +210,9 @@ export function TrabajosIntro() {
           <h2
             className="font-bebas leading-none tracking-[0.04em] text-transparent bg-clip-text section-title-animated"
             style={{
-              fontSize: "clamp(5.5rem, 14vw, 12rem)",
+              fontSize: isMobile
+                ? "clamp(5.5rem, 14vw, 12rem)"
+                : "clamp(8.5rem, 8vw, 12rem)",
               backgroundImage:
                 "linear-gradient(95deg, #ff6a00 0%, #ff8a1f 28%, #ffb455 50%, #ff8a1f 72%, #ff6a00 100%)",
               backgroundSize: "220% 100%",

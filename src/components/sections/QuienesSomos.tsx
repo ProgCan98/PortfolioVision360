@@ -59,14 +59,14 @@ export function QuienesSomos() {
   const settled = progress >= 0.4;
   const isMobile = useIsMobile();
   const leftTransform = isMobile
-  ? `translateY(${(1 - t) * 40}px)`
-  : settled
+    ? `translateY(${(1 - t) * 80}px)`
+    : settled
       ? "translate3d(0px,0,0)"
       : `translate3d(${leftOffsetX}px,0,${leftOffsetZ}px)`;
 
   const rightTransform = isMobile
-  ? `translateY(${(1 - t) * -40}px)`
-  : settled
+    ? `translateY(${(1 - t) * -80}px)`
+    : settled
       ? "translate3d(0px,0,0)"
       : `translate3d(${rightOffsetX}px,0,${rightOffsetZ}px)`;
 
@@ -80,7 +80,7 @@ export function QuienesSomos() {
 
       <div className="relative z-20 max-w-6xl mx-auto w-full">
         <SectionTitle
-          className={`mb-39 transition-all duration-700 ${
+          className={`mb-6 sm:mb-12 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
           }`}
         >
@@ -90,7 +90,14 @@ export function QuienesSomos() {
         {/* perspective container — required for translateZ to show 3D depth */}
         <div
           className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-8 sm:gap-10 items-center"
-          style={{ perspective: "1400px", perspectiveOrigin: "50% 50%" }}
+          style={
+            isMobile
+              ? {}
+              : {
+                  perspective: "1400px",
+                  perspectiveOrigin: "50% 50%",
+                }
+          }
         >
           {/* Left card — traces arc from behind the circle */}
           <div
