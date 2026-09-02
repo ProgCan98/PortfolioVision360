@@ -9,6 +9,7 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 export function Servicios() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [progress, setProgress] = useState(0);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const node = sectionRef.current;
@@ -52,20 +53,48 @@ export function Servicios() {
               1,
             );
             const eased = 1 - (1 - cardProgress) ** 2;
-            const isMobile = useIsMobile();
             const x = isMobile ? 0 : (1 - eased) * 180;
-            const y = isMobile ? (1 - eased) * 50 : 0;
+            const y = isMobile ? (1 - eased) * 40 : 0;
             const scale = 0.88 + eased * 0.12;
             const opacity = 0.15 + eased * 0.85;
+            const highlight = isMobile ? cardProgress > 0.35 : false;
 
             return (
               <div
                 key={s.numero}
-                className="group relative flex flex-row items-center gap-5 rounded-[2rem] border border-white/5 bg-[#1d1d1d]/95 px-8 py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.03),0_20px_30px_rgba(0,0,0,0.35)] transition-all duration-300 ease-out hover:-translate-y-5 hover:scale-[1.04] hover:shadow-[0_32px_72px_rgba(255,102,0,0.24),0_22px_44px_rgba(0,0,0,0.5)]"
+                className={`
+                  group
+                  relative
+                  flex
+                  flex-row
+                  items-center
+                  gap-5
+                  rounded-[2rem]
+                  border
+                  px-8
+                  py-6
+                  transition-all
+                  duration-500
+                  ease-out
+                
+                  ${
+                    highlight
+                      ? "border-brand-orange/25 shadow-[0_20px_50px_rgba(255,102,0,0.20)]"
+                      : "border-white/5"
+                  }
+                
+                  bg-[#1d1d1d]/95
+                
+                  shadow-[inset_0_1px_0_rgba(255,255,255,0.03),0_20px_30px_rgba(0,0,0,0.35)]
+                
+                  hover:-translate-y-5
+                  hover:scale-[1.04]
+                  hover:shadow-[0_32px_72px_rgba(255,102,0,0.24),0_22px_44px_rgba(0,0,0,0.5)]
+                `}
                 style={{
                   transformStyle: "preserve-3d",
                   opacity,
-                  transform: `translate3d(${x}px, ${y}px) scale(${scale})`,
+                  transform: `translate(${x}px, ${y}px) scale(${scale})`,
                   transition: "transform 0.5s ease-out, opacity 0.5s ease-out",
                 }}
               >
