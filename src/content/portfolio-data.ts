@@ -78,7 +78,7 @@ export const videoGroups: VideoGroup[] = [
     cliente: "Folk4",
     videos: [
       { src: videoUrl("Folk4-1.mp4"), title: "Folk4 — Video 1" },
-      { src: videoUrl("Folk4-2.mp4"), title: "Folk4 — Video 2" },
+      { src: videoUrl("folk4-2-fixed.mp4"), title: "Folk4 — Video 2" },
       { src: videoUrl("Folk4-3.mp4"), title: "Folk4 — Video 3" },
     ],
   },
