@@ -69,43 +69,43 @@ export const videoGroups: VideoGroup[] = [
   {
     cliente: "1000 Artículos",
     videos: [
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236830/mil-articulos-1.mov"), title: "Mil Artículos — Video 1" },
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236810/mil-articulos-2.mov"), title: "Mil Artículos — Video 2" },
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236772/mil-articulos-3.mov"), title: "Mil Artículos — Video 3" },
+      { src: videoUrl("Mil-articulos-1.mp4"), title: "Mil Artículos — Video 1" },
+      { src: videoUrl("Mil-articulos-2.mp4"), title: "Mil Artículos — Video 2" },
+      { src: videoUrl("Mil-articulos-3.mp4"), title: "Mil Artículos — Video 3" },
     ],
   },
   {
     cliente: "Folk4",
     videos: [
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236819/folk4-1.mov"), title: "Folk4 — Video 1" },
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236821/folk4-2.mov"), title: "Folk4 — Video 2" },
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236832/folk4-3.mov"), title: "Folk4 — Video 3" },
+      { src: videoUrl("Folk4-1.mp4"), title: "Folk4 — Video 1" },
+      { src: videoUrl("Folk4-2.mp4"), title: "Folk4 — Video 2" },
+      { src: videoUrl("Folk4-3.mp4"), title: "Folk4 — Video 3" },
     ],
   },
   {
     cliente: "Nodo Tecnológico",
     videos: [
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236829/nodo-1.mp4"), title: "Nodo Tecnológico — Video 1" },
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236815/nodo-2.mov"), title: "Nodo Tecnológico — Video 2" },
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236825/nodo-3.mov"), title: "Nodo Tecnológico — Video 3" },
+      { src: videoUrl("Nodo-1.mp4"), title: "Nodo Tecnológico — Video 1" },
+      { src: videoUrl("Nodo-2.mp4"), title: "Nodo Tecnológico — Video 2" },
+      { src: videoUrl("Nodo-3.mp4"), title: "Nodo Tecnológico — Video 3" },
     ],
   },
   {
     cliente: "Nodo Aconquija",
     videos: [
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236827/nodo-aconquija-1.mov"), title: "Nodo Aconquija — Video 1" },
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236780/nodo-aconquija-2.mp4"), title: "Nodo Aconquija — Video 2" },
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236776/nodo-aconquija-3.mp4"), title: "Nodo Aconquija — Video 3" },
+      { src: videoUrl("Nodo-aconquija-1.mp4"), title: "Nodo Aconquija — Video 1" },
+      { src: videoUrl("Nodo-aconquija-2.mp4"), title: "Nodo Aconquija — Video 2" },
+      { src: videoUrl("Nodo-aconquija-3.mp4"), title: "Nodo Aconquija — Video 3" },
     ],
   },
   {
     cliente: "Wunsch Artesanal",
     videos: [
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236797/wunsch-1.mov"), title: "Wunsch Artesanal — Video 1" },
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236785/wunsch-2.mov"), title: "Wunsch Artesanal — Video 2" },
-      { src: videoUrl("https://res.cloudinary.com/ccn8txca/video/upload/v1787236820/wunsch-3.mov"), title: "Wunsch Artesanal — Video 3" },
+      { src: videoUrl("Wunsch-1.mp4"), title: "Wunsch Artesanal — Video 1" },
+      { src: videoUrl("Wunsch-2.mp4"), title: "Wunsch Artesanal — Video 2" },
+      { src: videoUrl("Wunsch-3.mp4"), title: "Wunsch Artesanal — Video 3" },
     ],
   },
 ];
 
-export const telefonoVideoSrc = "https://res.cloudinary.com/ccn8txca/video/upload/v1787236815/telefono.mov";
+export const telefonoVideoSrc = "./videos/TelefonoVideos.mp4";
