@@ -44,6 +44,14 @@ El código está organizado principalmente en las siguientes carpetas:
 - `lib/` - Utilidades, constantes y configuraciones auxiliares.
 - `types/` - Definiciones de tipos utilizadas con TypeScript.
 
+## Recursos multimedia
+
+Las imágenes, vídeos, logotipos y demás recursos gráficos incluidos en este proyecto
+se utilizan con fines de presentación del sitio web.
+
+Los derechos sobre las marcas, logotipos, fotografías y demás recursos visuales
+pertenecen a sus respectivos propietarios cuando corresponda.
+
 ## Desarrollo
 
 Para ejecutar el proyecto de manera local:
@@ -53,10 +61,3 @@ Para ejecutar el proyecto de manera local:
 ```bash
 git clone https://github.com/ProgCan98/PortfolioVision360.git
 
-## Recursos multimedia
-
-Las imágenes, vídeos, logotipos y demás recursos gráficos incluidos en este proyecto
-se utilizan con fines de presentación del sitio web.
-
-Los derechos sobre las marcas, logotipos, fotografías y demás recursos visuales
-pertenecen a sus respectivos propietarios cuando corresponda.
