@@ -52,3 +52,11 @@ Para ejecutar el proyecto de manera local:
 
 ```bash
 git clone https://github.com/ProgCan98/PortfolioVision360.git
+
+## Recursos multimedia
+
+Las imágenes, vídeos, logotipos y demás recursos gráficos incluidos en este proyecto
+se utilizan con fines de presentación del sitio web.
+
+Los derechos sobre las marcas, logotipos, fotografías y demás recursos visuales
+pertenecen a sus respectivos propietarios cuando corresponda.
