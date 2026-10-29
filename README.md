@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vision 360 - Portfolio Web
 
-## Getting Started
+Portfolio web desarrollado para **Visión 360**, una agencia de comunicación integral y marketing estratégico.
 
-First, run the development server:
+El proyecto fue creado con el objetivo de presentar de forma moderna, visual y responsive la identidad de la agencia, sus servicios y parte de su trabajo, priorizando una navegación sencilla y una experiencia consistente tanto en ordenadores como en dispositivos móviles.
+
+## Demo
+
+El proyecto se encuentra publicado en Vercel:
+
+[Ver sitio web](https://portfolio-vision360.vercel.app)
+
+## Tecnologías utilizadas
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Git
+- GitHub
+- Vercel
+
+## Características principales
+
+- Diseño responsive adaptado a diferentes tamaños de pantalla.
+- Navegación optimizada para escritorio y dispositivos móviles.
+- Arquitectura basada en componentes reutilizables.
+- Secciones independientes para organizar la información del sitio.
+- Presentación de los servicios de la agencia.
+- Sección de presentación institucional.
+- Galería visual para mostrar trabajos y contenido fotográfico.
+- Integración de contenido multimedia.
+- Identidad visual consistente en todo el sitio.
+- Organización del contenido mediante archivos y componentes separados.
+
+## Estructura del proyecto
+
+El código está organizado principalmente en las siguientes carpetas:
+
+- `app/` - Estructura principal, páginas y rutas de la aplicación.
+- `components/` - Componentes reutilizables de la interfaz.
+- `content/` - Contenido utilizado dentro del sitio.
+- `hooks/` - Hooks personalizados.
+- `lib/` - Utilidades, constantes y configuraciones auxiliares.
+- `types/` - Definiciones de tipos utilizadas con TypeScript.
+
+## Desarrollo
+
+Para ejecutar el proyecto de manera local:
+
+1. Clona el repositorio:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/ProgCan98/PortfolioVision360.git
